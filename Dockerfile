@@ -47,6 +47,16 @@ RUN poetry install --no-dev
 FROM python-base as production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 
+RUN apt-get update \
+    && apt install -y netcat gcc \
+    && apt-get clean
+
 # Add app
 WORKDIR /usr/src/app
 COPY . .
+
+# add entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
+# run entrypoint.sh
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
