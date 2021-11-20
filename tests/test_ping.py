@@ -1,6 +1,3 @@
-from fastapi_tdd_docker import main
-
-
 def test_ping(test_app):
     # Given
     # test_app

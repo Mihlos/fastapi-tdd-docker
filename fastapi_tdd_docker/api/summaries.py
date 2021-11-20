@@ -1,4 +1,5 @@
 from typing import List
+
 from fastapi import APIRouter, HTTPException
 
 from fastapi_tdd_docker.api import crud
@@ -7,7 +8,6 @@ from fastapi_tdd_docker.models.pydantic import (
     SummaryResponseSchema,
 )
 from fastapi_tdd_docker.models.tortoise import SummarySchema
-
 
 router = APIRouter()
 

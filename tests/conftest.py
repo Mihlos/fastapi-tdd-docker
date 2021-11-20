@@ -4,8 +4,8 @@ import pytest
 from starlette.testclient import TestClient
 from tortoise.contrib.fastapi import register_tortoise
 
+from fastapi_tdd_docker.config import Settings, get_settings
 from fastapi_tdd_docker.main import create_application
-from fastapi_tdd_docker.config import get_settings, Settings
 
 
 def get_settings_override():
